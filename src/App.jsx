@@ -15,7 +15,7 @@ export default function App() {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
 
-  const API_KEY = "71660024915e496184935945261406";
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   const getWeather = async () => {
     console.log("[getWeather] city =", city);
@@ -86,7 +86,7 @@ px-6 auto-focus sm:text-left"
               />
 
               <button
-               className="bg-gradient-to-r from-blue-600 via-violet-500 to-pink-500
+                className="bg-gradient-to-r from-blue-600 via-violet-500 to-pink-500
 text-white
 px-6
 py-3
@@ -119,13 +119,19 @@ mx-6 flex flex-col justify-center rounded-2xl shadow-lg p-2 md:p-4 m-2 md:m-4"
                 <p className="text-sm">
                   {state}, {country}
                 </p>
-                <p className="text-6xl
+                <p
+                  className="text-6xl
 font-bold
-tracking-tight">{weather?.current?.temp_c ?? ""}°C</p>
-                <p className="text-lg
+tracking-tight"
+                >
+                  {weather?.current?.temp_c ?? ""}°C
+                </p>
+                <p
+                  className="text-lg
 text-gray-200
 uppercase
-tracking-wide">
+tracking-wide"
+                >
                   {weather?.current?.condition?.text ?? ""}
                 </p>
               </div>
@@ -165,16 +171,21 @@ duration-300"
                 </p>
               </div>
 
-              <div className="bg-white/10
+              <div
+                className="bg-white/10
 backdrop-blur-lg
 border
 border-white/10 rounded-lg p-2 md:p-4 flex flex-col items-center text-center hover:scale-105
 hover:bg-white/20
 transition
-duration-300">
+duration-300"
+              >
                 <p className="text-sm pt-0 ps-0 p-4">
                   <span>
-                    <FontAwesomeIcon icon={faDroplet} className="text-xl text-cyan-400" />
+                    <FontAwesomeIcon
+                      icon={faDroplet}
+                      className="text-xl text-cyan-400"
+                    />
                   </span>
                   Humidity
                 </p>
@@ -183,16 +194,21 @@ duration-300">
                 </p>
               </div>
 
-              <div className="bg-white/10
+              <div
+                className="bg-white/10
 backdrop-blur-lg
 border
 border-white/10 rounded-lg p-2 md:p-4 flex flex-col items-center text-center hover:scale-105
 hover:bg-white/20
 transition
-duration-300">
+duration-300"
+              >
                 <p className="text-sm pt-0 ps-0 p-4">
                   <span>
-                    <FontAwesomeIcon icon={faWind} className="text-xl text-yellow-400" />
+                    <FontAwesomeIcon
+                      icon={faWind}
+                      className="text-xl text-yellow-400"
+                    />
                   </span>
                   Wind
                 </p>
@@ -201,16 +217,21 @@ duration-300">
                 </p>
               </div>
 
-              <div className="bg-white/10
+              <div
+                className="bg-white/10
 backdrop-blur-lg
 border
 border-white/10 rounded-lg p-2 md:p-4 flex flex-col items-center text-center hover:scale-105
 hover:bg-white/20
 transition
-duration-300">
+duration-300"
+              >
                 <p className="text-sm pt-0 ps-0 p-4">
                   <span>
-                    <FontAwesomeIcon icon={faGaugeHigh} className="text-xl text-purple-400" />
+                    <FontAwesomeIcon
+                      icon={faGaugeHigh}
+                      className="text-xl text-purple-400"
+                    />
                   </span>
                   Pressure
                 </p>
