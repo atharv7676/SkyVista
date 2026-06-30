@@ -16,6 +16,7 @@ export default function App() {
   const [state, setState] = useState("");
 
   const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+  console.log("API KEY:", API_KEY);
 
   const getWeather = async () => {
     console.log("[getWeather] city =", city);
